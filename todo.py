@@ -14,3 +14,9 @@ while True:
         task = input("Enter task: ")
         tasks.append(task)
         print("Task added successfully")
+    elif choice =="2":
+        if not tasks:
+            print("No tasks available")
+        else:
+            for i,task in enumerate(tasks,start=1):
+                print(i,task)
