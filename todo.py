@@ -1,24 +1,14 @@
-tasks  = []
-while True:
-    print("\n----TO-DO LIST ----")
-    print("1.Add Task")
-    print("2.View Task")
-    print("3.Delete Task")
-    print("4.Exit")
+# todo.py
+# Core logic for the To-Do App
 
-    choice = input("Enter your choice: ")
+tasks = []
 
-    if choice == "3":
-        print("Goodbye!")
-        break
-    elif choice =="1":
-        task = input("Enter task: ")
-        tasks.append(task)
-        print("Task added successfully")
-    elif choice =="2":
-        if not tasks:
-            print("No tasks available")
-        else:
-            for i,task in enumerate(tasks,start=1):
-                print(i,task)
-  
+def add_task(task):
+    tasks.append(task)
+
+def delete_task(index):
+    if 0 <= index < len(tasks):
+        tasks.pop(index)
+
+def get_tasks():
+    return tasks
